@@ -1,0 +1,685 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Personal Website</title>
+
+    <style>
+        /* =========================
+           GENERAL PAGE STYLING
+           ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #292929;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 24px;
+        }
+
+        h1 {
+            margin: 0 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d6d6d6;
+            font-size: 2.4rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.35rem;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        /* =========================
+           ABOUT ME SECTION
+           ========================= */
+
+        .about-section {
+            margin-bottom: 45px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .about-image {
+            width: 240px;
+            max-width: 40%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .about-caption {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* =========================
+           ARTIFACT SECTIONS
+           ========================= */
+
+        .artifacts-section {
+            margin-top: 40px;
+        }
+
+        .artifact {
+            padding: 24px;
+            margin-bottom: 24px;
+            background-color: #ffffff;
+            border: 1px solid #dedede;
+            border-radius: 8px;
+        }
+
+        .artifact-caption {
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+
+        /* Images: maximum of TWO per row */
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            align-items: start;
+        }
+
+        .image-item {
+            min-width: 0;
+            margin: 0;
+        }
+
+        .image-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Clickable thumbnail links */
+
+        .thumbnail-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .thumbnail-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .thumbnail-link:hover img {
+            opacity: 0.85;
+        }
+
+        .thumbnail-link:focus-visible {
+            outline: 3px solid #3478c8;
+            outline-offset: 4px;
+        }
+
+        /* Videos: one video per row */
+
+        .video-item {
+            width: 100%;
+            margin: 0 0 16px;
+        }
+
+        .video-item video,
+        .video-item iframe {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        .video-item video {
+            height: auto;
+        }
+
+        /* Optional descriptive text under individual images */
+
+        .image-caption {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #555555;
+        }
+
+        /* =========================
+           SMALL SCREENS
+           ========================= */
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 14px;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .artifact {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <!-- =========================
+             PAGE TITLE
+             ========================= -->
+
+        <header>
+            <h1>Your Name / Website Title</h1>
+        </header>
+
+
+        <!-- =========================
+             ABOUT ME
+             ========================= -->
+
+        <section class="about-section" id="about">
+            <h2>About Me</h2>
+
+            <div class="about-content">
+
+                <!-- Replace with your image -->
+                <img
+                    class="about-image"
+                    src="images/about-me.jpg"
+                    alt="A photo of me"
+                >
+
+                <!-- Your introduction and image caption -->
+                <div class="about-caption">
+                    <h3>A Little About Myself</h3>
+
+                    <p>
+                        Write a short introduction about yourself here.
+                        Describe your background, interests, or the purpose
+                        of this website.
+                    </p>
+
+                    <p>
+                        Add any additional information, links, or details
+                        you would like visitors to know.
+                    </p>
+
+                    <p class="image-caption">
+                        Optional caption for the image.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             ARTIFACTS
+             ========================= -->
+
+        <section class="artifacts-section" id="artifacts">
+            <h2>Artifacts</h2>
+
+
+            <!-- =========================
+                 ARTIFACT 1
+                 Caption only; no image box
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 1: Section Title</h3>
+
+                <p class="artifact-caption">
+                    Write the caption or description for this artifact here.
+                    This section intentionally has no image area.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 2
+                 Clickable PDF thumbnail
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 2: Section Title</h3>
+
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <a
+                            class="thumbnail-link"
+                            href="files/artifact-2.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="images/artifact-2-thumbnail.jpg"
+                                alt="Preview of Artifact 2 PDF"
+                            >
+                        </a>
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the document here. Clicking the thumbnail opens
+                    the PDF in a new tab.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 3
+                 Two GIFs + Colab notebook link
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 3: Section Title</h3>
+
+                <div class="image-grid">
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-3-animation-1.gif"
+                            alt="First animation for Artifact 3"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-3-animation-2.gif"
+                            alt="Second animation for Artifact 3"
+                        >
+                    </figure>
+
+                    <!-- Clickable Colab thumbnail -->
+                    <figure class="image-item">
+                        <a
+                            class="thumbnail-link"
+                            href="https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPOSITORY/blob/main/NOTEBOOK.ipynb"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="images/artifact-3-colab-thumbnail.jpg"
+                                alt="Open Artifact 3 notebook in Google Colab"
+                            >
+                        </a>
+                    </figure>
+
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the artifact and its animations here.
+                    Click the notebook thumbnail to open it in Google Colab.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 4
+                 Clickable PDF thumbnail
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 4: Section Title</h3>
+
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <a
+                            class="thumbnail-link"
+                            href="files/artifact-4.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="images/artifact-4-thumbnail.jpg"
+                                alt="Preview of Artifact 4 PDF"
+                            >
+                        </a>
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe this document here.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 5
+                 Two images
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 5: Section Title</h3>
+
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-5-image-1.jpg"
+                            alt="First image for Artifact 5"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-5-image-2.jpg"
+                            alt="Second image for Artifact 5"
+                        >
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe these images here.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 6
+                 Three images; third wraps to next row
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 6: Section Title</h3>
+
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-6-image-1.jpg"
+                            alt="First image for Artifact 6"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-6-image-2.jpg"
+                            alt="Second image for Artifact 6"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-6-image-3.jpg"
+                            alt="Third image for Artifact 6"
+                        >
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the three images here.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 7
+                 Image + clickable YouTube thumbnail
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 7: Section Title</h3>
+
+                <div class="image-grid">
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-7-image.jpg"
+                            alt="Image for Artifact 7"
+                        >
+                    </figure>
+
+                    <!-- Replace VIDEO_ID with the YouTube video ID -->
+                    <figure class="image-item">
+                        <a
+                            class="thumbnail-link"
+                            href="https://www.youtube.com/watch?v=VIDEO_ID"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg"
+                                alt="Watch Artifact 7 on YouTube"
+                            >
+                        </a>
+                    </figure>
+
+                </div>
+
+                <p class="artifact-caption">
+                    Describe this artifact here. Click the video thumbnail
+                    to watch the YouTube video.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 8
+                 Four images; two per row
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 8: Section Title</h3>
+
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-8-image-1.jpg"
+                            alt="First image for Artifact 8"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-8-image-2.jpg"
+                            alt="Second image for Artifact 8"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-8-image-3.jpg"
+                            alt="Third image for Artifact 8"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-8-image-4.jpg"
+                            alt="Fourth image for Artifact 8"
+                        >
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the four images here.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 9
+                 Two images
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 9: Section Title</h3>
+
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-9-image-1.jpg"
+                            alt="First image for Artifact 9"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-9-image-2.jpg"
+                            alt="Second image for Artifact 9"
+                        >
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the two images here.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 10
+                 One embedded video + two images
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 10: Section Title</h3>
+
+                <!-- Video gets its own full-width row -->
+                <div class="video-item">
+                    <video
+                        controls
+                        preload="none"
+                        poster="images/artifact-10-video-thumbnail.jpg"
+                    >
+                        <source
+                            src="media/artifact-10-video.mp4"
+                            type="video/mp4"
+                        >
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+
+                <!-- At most two images per row -->
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-10-image-1.jpg"
+                            alt="First image for Artifact 10"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-10-image-2.jpg"
+                            alt="Second image for Artifact 10"
+                        >
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the video and images here.
+                </p>
+            </section>
+
+
+            <!-- =========================
+                 ARTIFACT 11
+                 One embedded video + four images
+                 ========================= -->
+
+            <section class="artifact">
+                <h3>Artifact 11: Section Title</h3>
+
+                <!-- Video gets its own full-width row -->
+                <div class="video-item">
+                    <video
+                        controls
+                        preload="none"
+                        poster="images/artifact-11-video-thumbnail.jpg"
+                    >
+                        <source
+                            src="media/artifact-11-video.mp4"
+                            type="video/mp4"
+                        >
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+
+                <!-- Four images, arranged two per row -->
+                <div class="image-grid">
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-11-image-1.jpg"
+                            alt="First image for Artifact 11"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-11-image-2.jpg"
+                            alt="Second image for Artifact 11"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-11-image-3.jpg"
+                            alt="Third image for Artifact 11"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="images/artifact-11-image-4.jpg"
+                            alt="Fourth image for Artifact 11"
+                        >
+                    </figure>
+                </div>
+
+                <p class="artifact-caption">
+                    Describe the video and four images here.
+                </p>
+            </section>
+
+        </section>
+
+    </main>
+</body>
+</html>
