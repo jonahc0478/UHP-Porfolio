@@ -113,7 +113,7 @@
             line-height: 1.4;
         }
 
-        h4 {
+        .class-name {
             color: var(--charcoal);
             font-size: 1.25rem;
             line-height: 1.3;
@@ -455,15 +455,21 @@
 
                 <p class="artifact-caption">
                     I have enjoyed taking math classes since I started school, so working towards a mathematics minor was a natural progression for me.  As an engineering student, I was required to take up through MA 341, so only four extra courses were required.
-                    These are the courses I took for the minor (in addition to the prerequisite calculus classes). The last three courses are of particular note, as they have simultaneously prepared me for graduate-level study, while throwing me into numerous research projects.
-
-                    <h4>MA 341 Differential Equations 1</h4> - A course on ordinary differential equations and common solution methods / applications
-                    <h4>MA 401 Differential Equations 2</h4> - A course on partial differential equations, notably the Wave, Heat, and Laplace equations
-                    <h4>MA 405 Advanced Linear Algebra</h4> - A proof-based study of linear alebgra, emphasizing vector spaces and linear maps
-                    <h4>MA 326 Mathmatical Foundations of Data Science 1</h4> - An exploration of several modern data science algortihms, focusing on problems with explicit necessary conditions
-                    <h4>MA 404 Mathmatical Foundations of Data Science 2</h4> - An exploration of optimization algorithms, neural network architectures, and generative learning
                 </p>
+
+                <p class="artifact-caption">
+                    These are the courses I took for the minor (in addition to the prerequisite calculus classes). The last three courses are of particular note, as they have simultaneously prepared me for graduate-level study, while throwing me into numerous research projects.
+                </p>
+                    
+                <ul class="class-list">
+                    <li><span class="class-name">MA 341 Differential Equations 1</span> - A course on ordinary differential equations and common solution methods / applications</li>
+                    <li><span class="class-name">MA 401 Differential Equations 2</span> - A course on partial differential equations, notably the Wave, Heat, and Laplace equations</li>
+                    <li><span class="class-name">MA 405 Advanced Linear Algebra</span> - A proof-based study of linear alebgra, emphasizing vector spaces and linear maps</li>
+                    <li><span class="class-name">MA 326 Mathmatical Foundations of Data Science 1</span> - An exploration of several modern data science algortihms, focusing on problems with explicit necessary conditions</li>
+                    <li><span class="class-name">MA 404 Mathmatical Foundations of Data Science 2</span> - An exploration of optimization algorithms, neural network architectures, and generative learning</li>
+                </ul>
             </section>
+
 
             <!-- =========================
                  ARTIFACT 2
@@ -499,6 +505,9 @@
 
                 <p class="artifact-caption">
                     MA 326 is a very research-focused course, culminating in an "Adopt an Algorithm" project.  I researched and coded a decision tree algorithm, and synthesized the results in a paper (shown right, click to open in new tab).  This was a vital experience for me, as it was my first time writing a complex research paper on a topic like this.
+                </p>
+                
+                <p class="artifact-caption">
                     Decision trees are a tool which systematically and recursively split a dataset, forming a tree structure (as shown left).  When new data is introduced, we can compare new points to the tree's split boundaries, tracing a path down the tree.  The result at the final node can be used to make meaningful predictions (such as assigning a class) about the input data.  If you are interested in a deeper dive, feel free to check out the paper in its entirety (linked right).
                 </p>
             </section>
@@ -512,20 +521,21 @@
             <section class="artifact">
                 <h3>Artifact 3: MA 404 Adopt an Algorithm Pesentation: Differential Evolution</h3>
 
-                <div class="image-grid three-columns">
+                <div class="image-grid">
 
+                    <!-- Clickable Presentation thumbnail -->
                     <figure class="image-item">
-                        <img
-                            src="Media/Adopt An Algorithm/MA 404 L2.gif"
-                            alt="Animation of differential evolution acting on a quadratic"
+                        <a
+                            class="thumbnail-link"
+                            href="Media/Adopt An Algorithm/Differential Evolution Algorithm.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                    </figure>
-
-                    <figure class="image-item">
-                        <img
-                            src="Media/Adopt An Algorithm/MA 404 Ackley.gif"
-                            alt="Animation of differential evolution acting on the two-dimensional Ackley function"
-                        >
+                            <img
+                                src="Media/Thumbnails/Differential Evolution Presentation Thumbnail.png"
+                                alt="Thumbnail and link to Jonah's differential evolution Colab notebook"
+                            >
+                        </a>
                     </figure>
 
                     <!-- Clickable Colab thumbnail -->
@@ -543,11 +553,32 @@
                         </a>
                     </figure>
 
+                    <figure class="image-item">
+                        <img
+                            src="Media/Adopt An Algorithm/MA 404 L2.gif"
+                            alt="Animation of differential evolution acting on a quadratic"
+                        >
+                    </figure>
+
+                    <figure class="image-item">
+                        <img
+                            src="Media/Adopt An Algorithm/MA 404 Ackley.gif"
+                            alt="Animation of differential evolution acting on the two-dimensional Ackley function"
+                        >
+                    </figure>
+
                 </div>
 
                 <p class="artifact-caption">
-                    Describe the artifact and its animations here.
-                    Click the notebook thumbnail to open it in Google Colab.
+                    Similarly to its predecessor MA 326, MA 404 builds up to the <em>Adopt an Algorithm</em> at the end of the semester.  Since I took this class the first semester it was offered, we had a small class (7, including the instructor), and thus opted to turn the project into a presentation instead of a paper.
+                </p>
+
+                <p class="artifact-caption">
+                    To fit the theme of the class, I presented on the differential evolution (DE) algorithm.  DE is a metaheuristic used to find near-optimal solution to a problem, harnessing an evolving "population" of points.  You can learn more about this algorithm from my presentation (linked, top left).
+                </p>
+
+                <p class="artifact-caption">
+                    As part of my presentation, I made a Colab notebook (linked, top right).  The notebook serves to demonstrate DE in action, while providing informative visualizations.  Here, you can see DE minimizing a quadratic (bottom left), along with the Ackley function (bottom right), each in two dimensions.
                 </p>
             </section>
 
@@ -585,7 +616,15 @@
                 </div>
 
                 <p class="artifact-caption">
-                    Describe this document here.
+                    Continuing the ripple effect of my mathematics minor, the experience from my MA 326 class landed me a summer research internship via the <em>Research in ISE: Research Experience for Undegraduates (RISE REU)</em> program.
+                </p>
+
+                <p class="artifact-caption">
+                    On this project, I was tasked with contiuing research on combining the strengths of agent-based and compartmental (differential-equation-based) models.  The goal of this project is to use the <em>Biologically-Influneced Neural Networks (BINNs)</em> technique to create a hybrid model which captures the behavior of the disease spread simulator <em>Covasim</em>.
+                </p>
+
+                <p class="artifact-caption">
+                    To accomplish this goal, I needed to expand the differential equation model of the system to include more factors and increase the fidelity of the model. The diagram on the left shows the model used to describe transition from healthy to infected to recovered, after the relevant updates were made.  I ended up making a research poster on my process and findings, for NCSU's <em>Summer Research Symposium</em>.  If you are interested in exploring this work further, you can explore this poster (linked, right).
                 </p>
             </section>
 
@@ -615,7 +654,11 @@
                 </div>
 
                 <p class="artifact-caption">
-                    Describe these images here.
+                    One canon event every NCSU engineering student has encountered is the <em>Freshman Engineering Design Day (FEDD)</em> project.  My group made a Minecraft-themed mechanical music maker, and ended up placing third out of ten groups at design day and winning T-shirts!
+                </p>
+
+                <p class="artifact-caption">
+                    Our design (as featured on the left) featured a hand-crank for the box, along with a spinning figurine of the man himself, Steve.  Sadly, due to a lack of documentation, I do not have access to a quality picture of our poster (shown partially on the right).  Despite this, you can still see some of the interesting elements, including a picture of the internal mechanism of the box.
                 </p>
             </section>
 
@@ -652,7 +695,11 @@
                 </div>
 
                 <p class="artifact-caption">
-                    Describe the three images here.
+                    One of my favorite projects I have completed so far for my degree is the <em>Aluminum Coaster</em> project for my ISE 316 (Manufacturing Engineering) course.  This project detailed the steps from designing a metal coaster to bringing it to mass production, including a comprehensive report.
+                </p>
+
+                <p class="artifact-caption">
+                    The best part of the project, however, is that you get to manufacture your own coaster design in the lab.  Here, you can see two finished versions of our coaster: the original version (left) and simplified version (middle, the black acrylic was to difficult to install reliably, so it was removed).  Lastly, the image on the right shows a partially completed coaster, still in the vice of the mill.
                 </p>
             </section>
 
@@ -692,8 +739,11 @@
                 </div>
 
                 <p class="artifact-caption">
-                    Describe this artifact here. Click the video thumbnail
-                    to watch the YouTube video.
+                    Earlier in my college career, I participated in one of the UHP's signature programs: the <em>20 Hour Metaskill Challenge</em>.  For my skill, I wanted to learn digital art.
+                </p>
+
+                <p class="artifact-caption">
+                    This didn't end up being the wisest of choices, and led to multiple pivots, but I had fun regardless! You can see a page of drawing excercises I completed (left) to improve my skills.  If you want a deeper dive into my process and results, you can check out my final video for the metaskill challenge (linked, right).
                 </p>
             </section>
 
@@ -737,7 +787,11 @@
                 </div>
 
                 <p class="artifact-caption">
-                    Describe the four images here.
+                    I have enjoyed origami as a hobby for over a decade, and it seems that a trail of folded paper follows me wherever I go.  
+                </p>
+
+                <p class="artifact-caption">
+                    The top pictures feature a scene out of a previous dorm room of mine, with everything from simple paper snowflakes to complex weave of paper frames forming a spiky, geometric ball (called "wireframe origami").  The bottom picture feature my current origami stash... is that Kasane Teto?
                 </p>
             </section>
 
