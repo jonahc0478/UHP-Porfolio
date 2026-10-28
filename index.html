@@ -125,19 +125,42 @@
             border-radius: 5px;
         }
 
+        /* Special layout: two stacked images + one tall image */
+        .image-grid.stacked-tall {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: stretch;
+        }
+
+        .stacked-tall .left-images {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            gap: 16px;
+            align-content: start;
+        }
+
+        .stacked-tall .tall-image {
+            height: 100%;
+        }
+
+        .stacked-tall .tall-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         /* Clickable thumbnail links */
 
-        .thumbnail-link {
+        /* .thumbnail-link {
             display: block;
             color: inherit;
             text-decoration: none;
-        }
+        } */
 
         /* Wrapper for thumbnails that link elsewhere */
-        /* .thumbnail-link {
+        .thumbnail-link {
             position: relative;
             display: block;
-        } */
+        }
 
         /* Always-visible external-link indicator */
         .thumbnail-link::after {
@@ -424,7 +447,7 @@
                             rel="noopener noreferrer"
                         >
                             <img
-                                src="Media/Poster Final.pdf"
+                                src="Media/Poster Final.png"
                                 alt="Preview of Artifact 4 PDF"
                             >
                         </a>
@@ -577,7 +600,7 @@
 
                     <figure class="image-item">
                         <img
-                            src="Media/Origami/Origami Teto.jpg"
+                            src="Media/Origami/Origami Teto.png"
                             alt="Fourth image for Artifact 8"
                         >
                     </figure>
@@ -597,15 +620,28 @@
             <section class="artifact">
                 <h3>Artifact 9: Crochet and Knitting</h3>
 
-                <div class="image-grid">
-                    <figure class="image-item">
-                        <img
-                            src="Media/Yarn/Scarf_with_Scale.jpg"
-                            alt="First image for Artifact 9"
-                        >
-                    </figure>
+                <div class="image-grid stacked-tall">
 
-                    <figure class="image-item">
+                    <!-- Left column: two stacked images -->
+                    <div class="left-images">
+
+                        <figure class="image-item">
+                            <img
+                                src="Media/Yarn/Scarf_with_Scale.jpg"
+                                alt="First image for Artifact 9"
+                            >
+                        </figure>
+
+                        <figure class="image-item">
+                            <img
+                                src="Media/Yarn/Scarf Reference.png"
+                                alt="Second short image"
+                            >
+                        </figure>
+
+                    </div>
+
+                    <figure class="image-item tall-image">
                         <img
                             src="Media/Yarn/Scarf_modelled.jpg"
                             alt="Second image for Artifact 9"
