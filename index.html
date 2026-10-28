@@ -3,59 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonah Catlin | UHP Honors Portfolio</title>
 
     <style>
-        /* =========================
-           GENERAL PAGE STYLING
-           ========================= */
+        :root {
+            --wolfpack-red: #CC0000;
+            --wolfpack-red-dark: #990000;
+            --charcoal: #25282C;
+            --body-text: #343A40;
+            --muted-text: #606873;
+            --page-background: #F2F3F5;
+            --card-background: #FFFFFF;
+            --border-color: #D8DDE3;
+        }
 
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #292929;
-            background-color: #f5f5f5;
+            line-height: 1.65;
+            color: var(--body-text);
+            background-color: var(--page-background);
         }
 
-        .container {
-            max-width: 1100px;
+        a {
+            color: var(--wolfpack-red);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--wolfpack-red-dark);
+            text-decoration: underline;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--wolfpack-red);
+            outline-offset: 4px;
+        }
+
+        /* Header and square icon */
+        .site-header {
+            background: var(--wolfpack-red);
+            color: #FFFFFF;
+            border-bottom: 5px solid var(--wolfpack-red-dark);
+            padding: 22px 5%;
+        }
+
+        .header-inner {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
         }
 
-        h1 {
-            margin: 0 0 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #d6d6d6;
-            font-size: 2.4rem;
+        .site-title {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: #FFFFFF;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+        }
+
+        .site-icon {
+            display: block;
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            object-fit: contain;
+            padding: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            border-radius: 4px;
+        }
+
+        /* Main content */
+        .container {
+            width: min(1200px, 90%);
+            margin: 0 auto;
+            padding: 30px 0;
         }
 
         h2 {
             margin-top: 0;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            padding-left: 14px;
+            border-left: 7px solid var(--wolfpack-red);
+            color: var(--charcoal);
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            line-height: 1.3;
         }
 
         h3 {
             margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+            font-size: 1.25rem;
+            line-height: 1.4;
         }
 
         p {
             margin-top: 0;
         }
 
-        /* =========================
-           ABOUT ME SECTION
-           ========================= */
-
+        /* About Me */
         .about-section {
             margin-bottom: 45px;
         }
@@ -63,10 +124,11 @@
         .about-content {
             display: flex;
             align-items: flex-start;
-            gap: 24px;
+            gap: 28px;
         }
 
         .about-image {
+            display: block;
             width: 240px;
             max-width: 40%;
             height: auto;
@@ -79,20 +141,26 @@
             min-width: 0;
         }
 
-        /* =========================
-           ARTIFACT SECTIONS
-           ========================= */
-
+        /* Artifact cards */
         .artifacts-section {
             margin-top: 40px;
         }
 
         .artifact {
-            padding: 24px;
-            margin-bottom: 24px;
-            background-color: #ffffff;
-            border: 1px solid #dedede;
-            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 16px;
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.035);
+        }
+
+        .artifact:last-child {
+            margin-bottom: 0;
+        }
+
+        .artifact h3 {
+            margin-bottom: 8px;
         }
 
         .artifact-caption {
@@ -100,8 +168,7 @@
             margin-bottom: 0;
         }
 
-        /* Images: maximum of TWO per row */
-
+        /* Image grids: two columns by default */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -109,6 +176,7 @@
             align-items: start;
         }
 
+        /* Retained for artifacts that intentionally use three columns */
         .image-grid.three-columns {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
@@ -122,10 +190,10 @@
             display: block;
             width: 100%;
             height: auto;
-            border-radius: 5px;
+            border-radius: 4px;
         }
 
-        /* Special layout: two stacked images + one tall image */
+        /* Two stacked images on the left, tall image on the right */
         .image-grid.stacked-tall {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             align-items: stretch;
@@ -149,51 +217,39 @@
         }
 
         /* Clickable thumbnail links */
-
-        /* .thumbnail-link {
-            display: block;
-            color: inherit;
-            text-decoration: none;
-        } */
-
-        /* Wrapper for thumbnails that link elsewhere */
         .thumbnail-link {
             position: relative;
             display: block;
+            color: inherit;
+            text-decoration: none;
+            border-radius: 4px;
         }
 
-        /* Always-visible external-link indicator */
         .thumbnail-link::after {
             content: "↗";
             position: absolute;
             top: 8px;
             right: 8px;
-
             width: 28px;
             height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            background: rgba(0, 0, 0, 0.75);
-            color: white;
-            border-radius: 5px;
+            background: rgba(37, 40, 44, 0.9);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
             font-size: 20px;
             font-weight: bold;
-
+            line-height: 1;
             pointer-events: none;
-        }
-
-        /* Optional: emphasize the thumbnail on hover */
-        .thumbnail-link:hover img {
-            opacity: 0.85;
         }
 
         .thumbnail-link img {
             display: block;
             width: 100%;
             height: auto;
-            border-radius: 5px;
+            border-radius: 4px;
         }
 
         .thumbnail-link:hover img {
@@ -201,14 +257,13 @@
         }
 
         .thumbnail-link:focus-visible {
-            outline: 3px solid #3478c8;
+            outline: 3px solid var(--wolfpack-red);
             outline-offset: 4px;
         }
 
-        /* Videos: one video per row */
-
+        /* Videos: full width and black behind the poster */
         video {
-            background-color: black;
+            background-color: #000000;
         }
 
         .video-item {
@@ -230,29 +285,36 @@
             height: auto;
         }
 
-        /* Optional descriptive text under individual images */
-
         .image-caption {
             margin-top: 8px;
             font-size: 0.9rem;
-            color: #555555;
+            color: var(--muted-text);
         }
 
-        /* =========================
-           SMALL SCREENS
-           ========================= */
-
+        /* Small screens */
         @media (max-width: 600px) {
-            .container {
-                padding: 20px 14px;
+            .site-header {
+                padding: 16px 4%;
             }
 
-            h1 {
-                font-size: 1.9rem;
+            .header-inner {
+                gap: 12px;
+            }
+
+            .site-icon {
+                width: 60px;
+                height: 60px;
+                flex-basis: 60px;
+            }
+
+            .container {
+                width: 92%;
+                padding: 22px 0;
             }
 
             .about-content {
                 flex-direction: column;
+                gap: 16px;
             }
 
             .about-image {
@@ -260,8 +322,18 @@
                 max-width: 100%;
             }
 
-            .image-grid {
+            .image-grid,
+            .image-grid.three-columns,
+            .image-grid.stacked-tall {
                 grid-template-columns: 1fr;
+            }
+
+            .stacked-tall .tall-image {
+                height: auto;
+            }
+
+            .stacked-tall .tall-image img {
+                height: auto;
             }
 
             .artifact {
@@ -272,15 +344,18 @@
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="site-title">Jonah Catlin | UHP Honors Portfolio</h1>
+            <img
+                class="site-icon"
+                src="Media/UHP Icon.jpg"
+                alt="Site logo"
+            >
+        </div>
+    </header>
+
     <main class="container">
-
-        <!-- =========================
-             PAGE TITLE
-             ========================= -->
-
-        <header>
-            <h1>Jonah Catlin / UHP Honors Portfolio</h1>
-        </header>
 
 
         <!-- =========================
