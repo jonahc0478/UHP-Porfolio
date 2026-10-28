@@ -133,6 +133,39 @@
             text-decoration: none;
         }
 
+        /* Wrapper for thumbnails that link elsewhere */
+        /* .thumbnail-link {
+            position: relative;
+            display: block;
+        } */
+
+        /* Always-visible external-link indicator */
+        .thumbnail-link::after {
+            content: "↗";
+            position: absolute;
+            top: 8px;
+            right: 8px;
+
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+
+            pointer-events: none;
+        }
+
+        /* Optional: emphasize the thumbnail on hover */
+        .thumbnail-link:hover img {
+            opacity: 0.85;
+        }
+
         .thumbnail-link img {
             display: block;
             width: 100%;
@@ -304,7 +337,7 @@
                             rel="noopener noreferrer"
                         >
                             <img
-                                src="Media/Thumbnails/Decision Tree Humbnail.png"
+                                src="Media/Thumbnails/Decision Tree Thumbnail.png"
                                 alt="Preview of Artifact 2 PDF"
                             >
                         </a>
